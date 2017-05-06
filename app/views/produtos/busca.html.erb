@@ -1,0 +1,17 @@
+<h3>Produtos</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>                    
+            <th>Ações</th>
+        </tr> 
+    </thead>
+    <tbody>    
+        <%= render partial:"produto", collection: @produtos %>
+    </tbody>
+</table>
+
+<%= link_to "Novo Produto", new_produto_path  %>
+    

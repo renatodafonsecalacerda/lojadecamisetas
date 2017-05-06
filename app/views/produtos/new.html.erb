@@ -1,0 +1,24 @@
+<% @produto.errors.full_messages.each do |mensagem|%>
+	<div class="alert alert-danger" role="alert">
+			<%= mensagem %>
+	</div>
+<% end %>
+
+<%= form_for @produto do |f| %>
+	<div class="form-group">
+		<%= f.label_tag :nome %>
+		<%= f.text_field :nome, placeholder: "Nome da Camiseta", class:"form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label_tag :descricao %>
+		<%= f.text_area :descricao, placeholder: "Descrição", class:"form-control" , rows:4%>
+	</div>
+	<div class="form-inline">
+		<%= f.label_tag :quantidade %>
+		<%= f.number_field :quantidade, placeholder: "Quantidade", step:1, class:"form-control" %>
+
+		<%= f.label_tag :preco %>
+		<%= f.number_field :preco, placeholder: "Preco", step:0.1, class:"form-control" %>
+		<%= f.button "Salvar Produto", class:"btn btn-primary btn-sm" %>
+	</div> 
+<% end %>
